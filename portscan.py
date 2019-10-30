@@ -2,6 +2,7 @@
 import sys
 import socket
 
+
 def scan(ip, ports):
     try:
         for port in ports:
@@ -15,6 +16,7 @@ def scan(ip, ports):
     finally:
         print("\ndone!!!")
 
+        
 def fastscan(ip):
     print("Fast Scan in progress")
     ports = [21,22,23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080]
@@ -25,6 +27,7 @@ def fullscan(ip):
     print("Full Scan in progress")
     ports = range(1,65536)
     return scan(ip, ports)
+
 
 def customscan(ip, arg_port_range):
     try:
@@ -39,10 +42,9 @@ def customscan(ip, arg_port_range):
             print("range: {}-{}".format(arg_port_range[0], arg_port_range[1]))
             for port in range(start, end+1):
                 ports.append(port)
-
+                
             print("Custom Scan in progress.")
             return scan(ip, ports)
-            
         else:
             ports.append(int(arg_port_range))
             return scan(ip, ports)
