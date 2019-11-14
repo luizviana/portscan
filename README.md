@@ -1,3 +1,2 @@
-# portscan
-Portscan Python3
+# Port Scanner - Python
 ![image](./example.png)
